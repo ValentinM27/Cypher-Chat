@@ -36,8 +36,8 @@ public class ProtocoleTransposition extends Protocole {
         String _crypt = "";
         
         for(Integer i : _orderToRead) {
-            System.out.println(i);
             for(int y = 0; y < _high; y++) {
+                System.out.println( _arrayForCrypt[y][i-1]);
                 _crypt += _arrayForCrypt[y][i-1];
             }
         }
@@ -59,20 +59,20 @@ public class ProtocoleTransposition extends Protocole {
         String _before = messageChiffre.getCorpsMessage();
         ArrayList<Integer> _orderToRead = new ArrayList<>();
         
-        char[][] _arrayForCrypt = this.remplirTableauChiffrement(_before, clef);
+        char[][] _arrayForCrypt = this.remplirTableauDechiffrement(_before, clef);
         _orderToRead = this.getOrdreColonne(clef);
         int _high = _arrayForCrypt.length;
         
-        String _decrypt = "";
+        String _crypt = "";
         
         for(Integer i : _orderToRead) {
             for(int y = 0; y < _high; y++) {
-                _decrypt += _arrayForCrypt[y][i-1];
+                _crypt += _arrayForCrypt[y][(i-1)];
             }
         }
         
         Message _cryptMessage = new Message();
-        _cryptMessage.setCorpsMessage(_decrypt);
+        _cryptMessage.setCorpsMessage(_crypt);
         
         return _cryptMessage;
     }
@@ -110,6 +110,32 @@ public class ProtocoleTransposition extends Protocole {
     }
     
     /**
+     * Permet de remplir un tableau de transposition 
+     * @param message : Message à entrer dans le tableau
+     * @param cle : clef de cryptage
+     * @return : tableau rempli en fonction de la clef
+     */
+    private char[][] remplirTableauDechiffrement(String message, String cle) {        
+        int _nbCol = cle.length();
+        
+        int _nbLine = message.length() / cle.length();
+        if(message.length() % cle.length() != 0) _nbLine ++;
+        
+        char[][] _array = new char[_nbLine][_nbCol];
+        
+        ArrayList<Integer> _orderToWrite = this.getOrdreColonne(cle);
+
+        for(Integer i : _orderToWrite) {
+            for(int y = 0; y < _nbCol ; y++) {
+                message.charAt(0);
+                _array[i - 1][y] = message.charAt((i-1) * cle.length() + y);
+            }
+        }
+        
+        return _array;
+    }
+    
+    /**
      * Permet de générer un char aléatoire de bourage
      * @return char 
      */
@@ -134,15 +160,15 @@ public class ProtocoleTransposition extends Protocole {
         ArrayList<Couple> _listeCouple = new ArrayList<>();
         
         // Remplisage de liste de couple avec affectations des positions initiales
-        for(int i = 1; i < cle.length(); i++) {
+        for(int i = 1; i <= cle.length(); i++) {
             _listeCouple.add(new Couple(cle.charAt(i-1), i)); 
         }
         
         Collections.sort(_listeCouple, new ComparateurCouple());
         
-        for(Couple c : _listeCouple) {
+        _listeCouple.forEach(c -> {
             _orderCol.add(c.getPosition());
-        }
+        });
         
         return _orderCol;
     }
