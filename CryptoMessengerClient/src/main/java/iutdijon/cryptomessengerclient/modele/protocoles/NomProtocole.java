@@ -13,7 +13,8 @@ public enum NomProtocole {
     BRUT("Texte brut","Brut"),
     CESAR("Cryptogramme de César","Sym"),
     SUBSTITUTION("Cryptage par substitution","Sym"), 
-    TRANSPOSITION("Cryptage par transposition", "Sym");
+    TRANSPOSITION("Cryptage par transposition", "Sym"),
+    VIGENERE("Cryptage de Vigenere", "Sym");
     
     //--------------------------
     

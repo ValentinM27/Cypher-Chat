@@ -65,9 +65,9 @@ public class ProtocoleTransposition extends Protocole {
         
         String _crypt = "";
         
-        for(Integer i : _orderToRead) {
+        for(int i = 0; i < clef.length(); i++) {
             for(int y = 0; y < _high; y++) {
-                _crypt += _arrayForCrypt[y][(i-1)];
+                _crypt += _arrayForCrypt[y][i];
             }
         }
         
@@ -127,7 +127,6 @@ public class ProtocoleTransposition extends Protocole {
 
         for(Integer i : _orderToWrite) {
             for(int y = 0; y < _nbCol ; y++) {
-                message.charAt(0);
                 _array[i - 1][y] = message.charAt((i-1) * cle.length() + y);
             }
         }

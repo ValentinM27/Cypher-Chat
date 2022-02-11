@@ -12,6 +12,7 @@ C:\Users\vm579379\Desktop\CryptoS4\CryptoMessengerClient\src\main\java\iutdijon\
 C:\Users\vm579379\Desktop\CryptoS4\CryptoMessengerClient\src\main\java\iutdijon\cryptomessengerclient\network\Settings.java
 C:\Users\vm579379\Desktop\CryptoS4\CryptoMessengerClient\src\main\java\iutdijon\cryptomessengerclient\App.java
 C:\Users\vm579379\Desktop\CryptoS4\CryptoMessengerClient\src\main\java\iutdijon\cryptomessengerclient\controleur\protocoles\symetrique\ControleurChiffrementSymetrique.java
+C:\Users\vm579379\Desktop\CryptoS4\CryptoMessengerClient\src\main\java\iutdijon\cryptomessengerclient\modele\protocoles\realisations\ProtocoleVigenere.java
 C:\Users\vm579379\Desktop\CryptoS4\CryptoMessengerClient\src\main\java\iutdijon\cryptomessengerclient\vue\ecranprotocoles\ecrans\ecransymetrique\EcranSymetriqueEnvoi.java
 C:\Users\vm579379\Desktop\CryptoS4\CryptoMessengerClient\src\main\java\iutdijon\cryptomessengerclient\modele\protocoles\Protocole.java
 C:\Users\vm579379\Desktop\CryptoS4\CryptoMessengerClient\src\main\java\iutdijon\cryptomessengerclient\modele\protocoles\realisations\ProtocoleSubstitution.java

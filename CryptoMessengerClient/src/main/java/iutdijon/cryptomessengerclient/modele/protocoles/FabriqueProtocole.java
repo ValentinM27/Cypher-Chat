@@ -3,6 +3,7 @@ package iutdijon.cryptomessengerclient.modele.protocoles;
 import iutdijon.cryptomessengerclient.modele.protocoles.realisations.ProtocoleCesar;
 import iutdijon.cryptomessengerclient.modele.protocoles.realisations.ProtocoleSubstitution;
 import iutdijon.cryptomessengerclient.modele.protocoles.realisations.ProtocoleTransposition;
+import iutdijon.cryptomessengerclient.modele.protocoles.realisations.ProtocoleVigenere;
 
 
 /**
@@ -33,6 +34,10 @@ public class FabriqueProtocole {
                 
             case TRANSPOSITION:
                 protocole = new ProtocoleTransposition();
+                break;
+                
+            case VIGENERE:
+                protocole = new ProtocoleVigenere();
                 break;
         }
         return protocole;
