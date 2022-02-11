@@ -60,12 +60,12 @@ public class ProtocoleTransposition extends Protocole {
         
         char[][] _arrayForCrypt = this.remplirTableauDechiffrement(_before, clef);
         _orderToRead = this.getOrdreColonne(clef);
-        int _high = _arrayForCrypt.length;
+        int _high = _before.length() /clef.length();
         
         String _crypt = "";
         
-        for(int i = 0; i < clef.length(); i++) {
-            for(int y = 0; y < _high; y++) {
+        for(int i = 0; i < _high; i++) {
+            for(int y = 0; y < clef.length(); y++) {
                 _crypt += _arrayForCrypt[i][y];
             }
         }
