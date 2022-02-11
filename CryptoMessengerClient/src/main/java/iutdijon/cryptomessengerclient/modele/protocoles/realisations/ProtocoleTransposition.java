@@ -37,7 +37,6 @@ public class ProtocoleTransposition extends Protocole {
         
         for(Integer i : _orderToRead) {
             for(int y = 0; y < _high; y++) {
-                System.out.println( _arrayForCrypt[y][i-1]);
                 _crypt += _arrayForCrypt[y][i-1];
             }
         }
@@ -67,7 +66,7 @@ public class ProtocoleTransposition extends Protocole {
         
         for(int i = 0; i < clef.length(); i++) {
             for(int y = 0; y < _high; y++) {
-                _crypt += _arrayForCrypt[y][i];
+                _crypt += _arrayForCrypt[i][y];
             }
         }
         
@@ -119,15 +118,15 @@ public class ProtocoleTransposition extends Protocole {
         int _nbCol = cle.length();
         
         int _nbLine = message.length() / cle.length();
-        if(message.length() % cle.length() != 0) _nbLine ++;
         
         char[][] _array = new char[_nbLine][_nbCol];
         
         ArrayList<Integer> _orderToWrite = this.getOrdreColonne(cle);
-
+        int pos = 0;
         for(Integer i : _orderToWrite) {
-            for(int y = 0; y < _nbCol ; y++) {
-                _array[i - 1][y] = message.charAt((i-1) * cle.length() + y);
+            for(int y = 0; y < _nbLine ; y++) {
+                _array[y][i-1] = message.charAt(pos);
+                pos++;
             }
         }
         
