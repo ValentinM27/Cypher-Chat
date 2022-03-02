@@ -87,4 +87,16 @@ public class GenerateurCle {
         
         return _key;
     }
+    
+    /**
+     * Permet de générer une clef pour la compression RLE
+     * @return String : Clef de compression RLE
+     */
+    public static String genererCleRLE(){
+        // Génération de la longueur de la clef
+        Random _rand = new Random();
+        Integer _key = _rand.nextInt(7)+2;
+        
+        return _key.toString();
+    }
 }

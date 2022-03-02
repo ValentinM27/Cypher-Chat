@@ -14,7 +14,8 @@ public enum NomProtocole {
     CESAR("Cryptogramme de César","Sym"),
     SUBSTITUTION("Cryptage par substitution","Sym"), 
     TRANSPOSITION("Cryptage par transposition", "Sym"),
-    VIGENERE("Cryptage de Vigenere", "Sym");
+    VIGENERE("Cryptage de Vigenere", "Sym"),
+    RLE("Compression RLE", "Brut");
     
     //--------------------------
     
