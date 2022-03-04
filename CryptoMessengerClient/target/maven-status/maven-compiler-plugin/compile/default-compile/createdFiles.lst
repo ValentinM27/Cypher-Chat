@@ -1,3 +1,4 @@
+iutdijon\cryptomessengerclient\modele\protocoles\realisations\ProtocoleRLE.class
 iutdijon\cryptomessengerclient\vue\ecranprincipal\panel\composants\PanelProtocole.class
 iutdijon\cryptomessengerclient\controleur\protocoles\symetrique\ControleurReceptionSymetrique.class
 iutdijon\cryptomessengerclient\modele\protocoles\ProtocoleBrute.class

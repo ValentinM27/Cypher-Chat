@@ -1,6 +1,7 @@
 package iutdijon.cryptomessengerclient.modele.protocoles;
 
 import iutdijon.cryptomessengerclient.modele.protocoles.realisations.ProtocoleCesar;
+import iutdijon.cryptomessengerclient.modele.protocoles.realisations.ProtocoleHuffman;
 import iutdijon.cryptomessengerclient.modele.protocoles.realisations.ProtocoleRLE;
 import iutdijon.cryptomessengerclient.modele.protocoles.realisations.ProtocoleSubstitution;
 import iutdijon.cryptomessengerclient.modele.protocoles.realisations.ProtocoleTransposition;
@@ -44,6 +45,11 @@ public class FabriqueProtocole {
             case RLE:
                 protocole = new ProtocoleRLE();
                 break;
+                
+            case HUFFMAN:
+                protocole = new ProtocoleHuffman();
+                break;
+                
         }
         return protocole;
     }

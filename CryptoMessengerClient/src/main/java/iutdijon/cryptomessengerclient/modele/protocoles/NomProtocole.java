@@ -15,7 +15,8 @@ public enum NomProtocole {
     SUBSTITUTION("Cryptage par substitution","Sym"), 
     TRANSPOSITION("Cryptage par transposition", "Sym"),
     VIGENERE("Cryptage de Vigenere", "Sym"),
-    RLE("Compression RLE", "Brut");
+    RLE("Compression RLE", "Comp"),
+    HUFFMAN("Compression de Huffman", "Comp");
     
     //--------------------------
     
