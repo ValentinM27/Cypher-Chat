@@ -1,3 +1,4 @@
+iutdijon\cryptomessengerclient\modele\protocoles\realisations\huffman\ComparateurNoeuds.class
 iutdijon\cryptomessengerclient\modele\protocoles\realisations\ProtocoleRLE.class
 iutdijon\cryptomessengerclient\vue\ecranprincipal\panel\composants\PanelProtocole.class
 iutdijon\cryptomessengerclient\controleur\protocoles\symetrique\ControleurReceptionSymetrique.class
@@ -14,6 +15,7 @@ iutdijon\cryptomessengerclient\modele\protocoles\Protocole.class
 iutdijon\cryptomessengerclient\vue\ecranprincipal\panel\composants\menucontextuel\McBrut.class
 iutdijon\cryptomessengerclient\vue\ecranprotocoles\ecrans\ecranbrut\EcranBrutReception.class
 iutdijon\cryptomessengerclient\vue\ecranprotocoles\ecrans\composants\boutons\Bouton.class
+iutdijon\cryptomessengerclient\modele\protocoles\realisations\ProtocoleHuffman.class
 iutdijon\cryptomessengerclient\Main.class
 iutdijon\cryptomessengerclient\modele\protocoles\FabriqueProtocole.class
 iutdijon\cryptomessengerclient\vue\ecranprincipal\panel\composants\LabelNomProtocole.class
@@ -61,4 +63,5 @@ iutdijon\cryptomessengerclient\controleur\protocoles\symetrique\ControleurGenera
 iutdijon\cryptomessengerclient\vue\ecranprotocoles\ecrans\composants\labels\LabelElement.class
 iutdijon\cryptomessengerclient\vue\ecranconnexion\composants\labels\LabelElementConnexion.class
 iutdijon\cryptomessengerclient\modele\protocoles\realisations\ProtocoleVigenere.class
+iutdijon\cryptomessengerclient\modele\protocoles\realisations\huffman\Noeud.class
 iutdijon\cryptomessengerclient\controleur\Controleur.class

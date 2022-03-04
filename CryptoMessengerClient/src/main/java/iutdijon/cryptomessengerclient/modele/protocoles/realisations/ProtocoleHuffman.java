@@ -121,7 +121,6 @@ public class ProtocoleHuffman extends Protocole {
         String _cryptBody = _dicoString + "\\" +_final; 
         
         //On renvoit le message compressé
-        System.out.println(dictionnaire.toString());
         
         Message _crypt = new Message();
         _crypt.setCorpsMessage(_cryptBody);
@@ -140,9 +139,29 @@ public class ProtocoleHuffman extends Protocole {
         int _separator = _body.lastIndexOf('\\');
         String[] _splitString = {_body.substring(0, _separator), _body.substring(_separator+1)};
         
-        HashMap<Character,String> dictionnaire = this.createDicoDechiffrement(_splitString[0]);
+        HashMap<String, Character> dictionnaire = this.createDicoDechiffrement(_splitString[0]);
         
-        throw new UnsupportedOperationException("Not supported yet.");
+        String _stringBody = _splitString[1];
+        String _decrypt = "";
+        String _temp = "";
+        
+        /**
+         * La structure en arbre nous assures que chaque code ne peut 
+         * être associé qu'à une lettre, on parcours donc la chaine et
+         * on teste a chaque caractère si le code est associé à un char
+         */
+        for(int i = 0; i < _stringBody.length(); i++) {
+            _temp += _stringBody.charAt(i);
+            
+            if(dictionnaire.containsKey(_temp)) {
+                _decrypt += dictionnaire.get(_temp);
+                _temp = "";
+            }
+        }
+        
+        Message _decryptBody = new Message();
+        _decryptBody.setCorpsMessage(_decrypt);
+        return _decryptBody;
     }
     
     /**
@@ -150,19 +169,25 @@ public class ProtocoleHuffman extends Protocole {
      * @param _stringDico
      * @return 
      */
-    private HashMap<Character,String> createDicoDechiffrement(String _stringDico){
+    private HashMap<String, Character> createDicoDechiffrement(String _stringDico){
         // Création du dictionnaire
-        HashMap<Character,String> dictionnaire = new HashMap<>();
+        HashMap<String, Character> dictionnaire = new HashMap<>();
         
         while(_stringDico.length() > 0) {
             
             int _separator = _stringDico.lastIndexOf('*');
+            
+            // Gestion du char de séparation * 
+            if(_separator - 1 > -1 && _stringDico.charAt(_separator - 1) == '*') {
+                _separator -= 1;
+            } 
+            
             String[] _splitDico = {_stringDico.substring(0, _separator), _stringDico.substring(_separator+1)};
             
             int _stringSep =  _splitDico[1].lastIndexOf('_');
             String[] _splitCode = {_splitDico[1].substring(0, _stringSep), _splitDico[1].substring(_stringSep+1)};
             
-            dictionnaire.put(_splitCode[0].charAt(0), _splitCode[1]);
+            dictionnaire.put(_splitCode[1], _splitCode[0].charAt(0));
             
             _stringDico = _splitDico[0];
             
